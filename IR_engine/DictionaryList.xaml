@@ -1,0 +1,17 @@
+﻿<Window x:Class="IR_engine.DictionaryList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IR_engine"
+        mc:Ignorable="d"
+        Title="DictionaryList" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="termsList" VerticalScrollBarVisibility="Auto" IsReadOnly="true" HorizontalAlignment="Stretch" Margin="0,10,4.6,5" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" BorderBrush="{x:Null}"/>
+        <!--<ScrollViewer x:Name="dictionary" Height="Auto" Width="auto" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Margin="0,100,0,0">
+            <StackPanel x:Name="stack" Height="Auto" Width="auto" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" />
+        </ScrollViewer>-->
+
+
+    </Grid>
+</Window>

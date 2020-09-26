@@ -1,0 +1,194 @@
+﻿<Window x:Class="IR_engine.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IR_engine"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="970">
+    <Grid Background="#FFEDEDED">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="248" Margin="24,302,0,0" VerticalAlignment="Top" Width="440"/>
+        <Button x:Name="Browse" Content="Browse" HorizontalAlignment="Center" Margin="224,276,595,218.8" VerticalAlignment="Center" Width="85" Height="26" FontFamily="Showcard Gothic" Background="White" Foreground="#FF009FFF" BorderBrush="#FF5F5F5F" Click="Browse_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="248" Margin="494,302,0,0" VerticalAlignment="Top" Width="440"/>
+        <CheckBox x:Name="stem" Content="Enable Stemming" HorizontalAlignment="Center" Margin="77,357,715,148.8" VerticalAlignment="Center"/>
+        <Button Width="100" x:Name="Run" HorizontalAlignment="Center" Content="RUN" VerticalAlignment="Center"
+        Height="100" Margin="10,385,794,35.8" Foreground="#FF0A0C0F" FontFamily="Stencil" FontSize="36" AutomationProperties.HelpText="click here to run the engine" MouseEnter="Run_MouseEnter" MouseLeave="Run_MouseLeave" Click="Run_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Stroke="Black"
+                         StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Offset="0"
+                                          Color="White" />
+                                    <GradientStop Offset="1"
+                                          Color="Gray" />
+                                    <GradientStop Offset="1"
+                                          Color="DimGray" />
+                                    <RadialGradientBrush.Transform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="0.65" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.Transform>
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label x:Name="Boogle" Content="BarvazBarvazGo" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="219,43,138,491" VerticalAlignment="Center" Height="85" Width="605" Foreground="#FFFFAE00" FontFamily="Rockwell Extra Bold" FontSize="58" Background="{x:Null}">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
+        <Image x:Name="image" Source="barvaz.JPG" HorizontalAlignment="Center" Height="145" Margin="50,48,744,426" VerticalAlignment="Center" Width="168"/>
+        <Button x:Name="showDic" Content="show dictionary" HorizontalAlignment="Center" Margin="247,385,538,90.8" VerticalAlignment="Center" Width="119" Click="showDic_Click" Foreground="Black" BorderBrush="#FF00C3FF" Background="#FF00C3FF" Height="45">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <TextBox x:Name="pathText" HorizontalAlignment="Center" Height="23" Margin="7,277,698,220.8" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="199"/>
+        <Button x:Name="BrowseIndex" Content="Browse" HorizontalAlignment="Center" Margin="224,321,595,173.8" VerticalAlignment="Center" Width="85" Height="26" FontFamily="Showcard Gothic" Background="White" Foreground="#FF009FFF" BorderBrush="#FF5F5F5F" Click="BrowseIndex_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <TextBox x:Name="IndexPathText" HorizontalAlignment="Center" Height="23" Margin="7,324,698,173.8" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="199"/>
+        <Label Content="Languages" HorizontalAlignment="center" Height="32" Margin="851,302,41.2,286" VerticalAlignment="center" Width="71" RenderTransformOrigin="0.903,0.863"/>
+        <Button Width="100" x:Name="Load_Index" HorizontalAlignment="Center" Content="Load Index" VerticalAlignment="Center"
+            Height="98" Margin="124,385,680,37.8" Foreground="#FF0A0C0F" FontFamily="Stencil" FontSize="12
+                " AutomationProperties.HelpText="click here to load Index" MouseEnter="load_MouseEnter" MouseLeave="load_MouseLeave" Click="Load_Index_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Stroke="Black"
+                            StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <RadialGradientBrush.Transform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="0.65" />
+                                        </TransformGroup>
+                                    </RadialGradientBrush.Transform>
+                                    <GradientStop Offset="0"
+                                        Color="White" />
+                                    <GradientStop Offset="1"
+                                        Color="Gray" />
+                                    <GradientStop Offset="1"
+                                        Color="DimGray" />
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="reset" Content="reset" HorizontalAlignment="center" Height="45" Margin="247,440,538,35.8" VerticalAlignment="center" Width="119" Click="reset_Click" BorderBrush="Red" Foreground="Black" Background="Red">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <Label Content="Curpus Path" HorizontalAlignment="Center" Margin="320,281,511,213.8" VerticalAlignment="Center"/>
+        <Label Content="Index Directory Path" HorizontalAlignment="Center" Margin="318,321,469,173.8" VerticalAlignment="center"/>
+        <Label Content="Indexing" HorizontalAlignment="Left" Margin="198,267,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Rockwell Extra Bold"/>
+        <Grid HorizontalAlignment="Left" Height="248" Margin="494,302,0,0" VerticalAlignment="Top" Width="440">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="62*"/>
+                <RowDefinition Height="35*"/>
+                <RowDefinition Height="39*"/>
+                <RowDefinition Height="111*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="225*"/>
+                <ColumnDefinition Width="117*"/>
+                <ColumnDefinition Width="98*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="qryTextBox" HorizontalAlignment="Center" Height="23" Margin="14,19,12.8,20.4" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="198"/>
+            <Button x:Name="browseQry" Content="Browse" HorizontalAlignment="Center" Margin="10.2,18,6.6,18.4" VerticalAlignment="Center" Width="100" Height="26" FontFamily="Showcard Gothic" Background="White" Foreground="#FF009FFF" BorderBrush="#FF5F5F5F" Grid.Column="1" Grid.Row="0" Click="browseQry_Click">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <ComboBox x:Name="Language" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" Margin="7.4,18,8,18.4" VerticalAlignment="center" Width="83" Height="26"/>
+            <Label Content="Semantics" Grid.Column="2" HorizontalAlignment="Center" Margin="7.4,3.6,8,3.6" Grid.Row="1" VerticalAlignment="Center" Height="28" Width="83"/>
+            <CheckBox x:Name="semanticsCheckBox" Content="Use Semantic analysis" HorizontalAlignment="Left" Margin="15,9.6,0,9.6" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Height="16" Width="135" Click="CheckBox_Checked"/>
+            <ComboBox x:Name="model_CB" IsEnabled="false" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4.2,6.6,4.6,6.6" Width="108" Height="22" DropDownClosed="model_CB_DropDownClosed"/>
+            <Button x:Name="createModel" IsEnabled="false" Content="Create Model" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="100" Height="26" FontFamily="Showcard Gothic" Background="White" Foreground="#FF009FFF" BorderBrush="#FF5F5F5F" Grid.Column="1" Grid.Row="2" Click="createModel_Click">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+            <Label Content="Create your own model here:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,30,0" Grid.Row="2" Grid.Column="0"/>
+            <Button Width="90" x:Name="SearchBtn" HorizontalAlignment="Center" Content="SEARCH" VerticalAlignment="Center"
+                Height="90" Margin="0,0,0,10" Foreground="#FF0A0C0F" FontFamily="Stencil" FontSize="20" AutomationProperties.HelpText="click here to run the engine" Grid.Row="3" MouseEnter="Search_MouseEnter" MouseLeave="SearchBtn_MouseLeave" Click="SearchBtn_Click">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Ellipse Stroke="Black"
+                                StrokeThickness="2">
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush>
+                                        <RadialGradientBrush.Transform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleY="0.65" />
+                                            </TransformGroup>
+                                        </RadialGradientBrush.Transform>
+                                        <GradientStop Offset="0"
+                                            Color="White" />
+                                        <GradientStop Offset="1"
+                                            Color="Gray" />
+                                        <GradientStop Offset="1"
+                                            Color="DimGray" />
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <ScrollViewer x:Name="scrollLocations" Grid.Column="1" HorizontalAlignment="Right" Margin="0,5.2,4.6,0" Grid.Row="3" Width="108" Height="96" VerticalAlignment="Top" BorderBrush="Black" Background="#FFBFBFBF" OpacityMask="Black"/>
+            <Button x:Name="refreshbtn" Content="Refresh" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="75" Click="refreshbtn_Click"/>
+        </Grid>
+        <Label Content="Query file path" HorizontalAlignment="center" Height="32" Margin="509,302,351.2,286" VerticalAlignment="center" Width="103" RenderTransformOrigin="0.903,0.863"/>
+        <Label Content="Searching" HorizontalAlignment="Left" Margin="664,267,0,0" VerticalAlignment="Top" FontSize="16" FontFamily="Rockwell Extra Bold"/>
+        <ProgressBar x:Name="progBar" HorizontalAlignment="Left" Height="34" Margin="24,555,0,0" VerticalAlignment="Top" Width="910"/>
+        <Grid HorizontalAlignment="Left" Height="148" Margin="253,119,0,0" VerticalAlignment="Top" Width="495">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="39*"/>
+                <RowDefinition Height="19*"/>
+                <RowDefinition Height="16*"/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="textQuery" Grid.Column="0" Grid.Row="1
+                     " HorizontalAlignment="Center" Height="32" Margin="70,4,71,2" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="354"/>
+            <Label x:Name="test" Grid.Row="0" Grid.Column="0" Content="{Binding Path=STATUS}" HorizontalAlignment="Center" Margin="10,4" VerticalAlignment="Center" Height="70" Width="475"/>
+            <TextBox x:Name="outFile" HorizontalAlignment="Left" Height="23" Margin="70,9,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="240"/>
+            <Button x:Name="outFileBrowse" Content="Browse" HorizontalAlignment="Center" Margin="324,3,71,3" VerticalAlignment="Center" Width="100" Height="26" FontFamily="Showcard Gothic" Background="White" Foreground="#FF009FFF" BorderBrush="#FF5F5F5F" Grid.Row="2" Click="outFileBrowse_Click">
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
+        </Grid>
+        <Label Content="Query result output file" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="688,238,0,0"/>
+    </Grid>
+</Window>
